@@ -52,99 +52,11 @@
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Proptypes &lt;ModalLoader /&gt;</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="prop-validation"></a><a href="#prop-validation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prop Validation</h2>
 <h3><a class="anchor" aria-hidden="true" id="prop-proptype-required-default-value"></a><a href="#prop-proptype-required-default-value" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prop:   Proptype | required? | default value</h3>
-<pre><code class="hljs css language-jsx">backdropColor <span class="token punctuation">:</span>           string  <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token constant">COLOR</span><span class="token punctuation">.</span><span class="token constant">LIGHT</span> 
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`the background color of the input`</span></span>
+<pre><code class="hljs css language-jsx">loading <span class="token punctuation">:</span>             bool    <span class="token operator">|</span> required <span class="token operator">|</span>  <span class="token boolean">false</span>
+  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`triggers the modal to render.`</span></span>
 
-shadow <span class="token punctuation">:</span>                  bool    <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token boolean">false</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`if true`</span></span> elevation <span class="token template-string"><span class="token string">`will be required for the shadow to work.`</span></span>
-
-elevation <span class="token punctuation">:</span>               number  <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token number">0</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`nullified if shadow is false. (so it is dependent on the`</span></span> shadow <span class="token template-string"><span class="token string">`prop.`</span></span>
-
-spacing <span class="token punctuation">:</span>                 number  <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token number">5</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`used in multiple instances like *left and right padding of*`</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Input</span></span> <span class="token punctuation">/></span></span> <span class="token template-string"><span class="token string">`container,`</span></span>
-  <span class="token template-string"><span class="token string">`spaces between components inside`</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Input</span></span> <span class="token punctuation">/></span></span> <span class="token template-string"><span class="token string">`and many more.`</span></span>
-  <span class="token template-string"><span class="token string">`see the source code for reference (components/inputs/Input.jsx)`</span></span>
-
-borderRadius <span class="token punctuation">:</span>            number  <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token number">0</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`borderRadius of the container.`</span></span>
-
-borderWidth <span class="token punctuation">:</span>             number  <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token number">0</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`if it has a value you need to pass`</span></span> borderColor <span class="token template-string"><span class="token string">`prop otherwise it will return a transparent color`</span></span>
-
-borderColor <span class="token punctuation">:</span>             string  <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token constant">COLOR</span><span class="token punctuation">.</span><span class="token constant">TRANSPARENT</span> <span class="token operator">|</span> <span class="token string">'transparent'</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`required! if borderWidth has value otherwise it returns transparent`</span></span>
-
-leftButton <span class="token punctuation">:</span>              bool    <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token boolean">false</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`if true leftIcon can be tapped`</span></span>
-
-leftButtonPress <span class="token punctuation">:</span>         func    <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`the tap response if`</span></span> leftButton <span class="token template-string"><span class="token string">`is true`</span></span>
-
-leftIcon <span class="token punctuation">:</span>                string  <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token string">''</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`uses react-native-vector-icons/FontAwesome5 | name of the icon you want to use.`</span></span>
-  <span class="token template-string"><span class="token string">`see (https://fontawesome.com/icons?d=gallery) to see what icon names you can use`</span></span>
-
-leftIconSize <span class="token punctuation">:</span>            number  <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token number">20</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`the size of the left icon`</span></span>
-
-leftIconColor <span class="token punctuation">:</span>           string  <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token constant">COLOR</span><span class="token punctuation">.</span><span class="token constant">BLACK</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`the color of the left icon`</span></span>
-
-leftBorderColor <span class="token punctuation">:</span>         string  <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token string">''</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`if it has a value`</span></span> leftBorderThickness <span class="token template-string"><span class="token string">`will be needed for this to work`</span></span>
-
-leftBorderThickness <span class="token punctuation">:</span>     number  <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token number">0</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`nullified if`</span></span> leftBorderColor <span class="token template-string"><span class="token string">`has no value. (dependent on the`</span></span> leftBorderColor <span class="token template-string"><span class="token string">`prop.`</span></span>
-
-rightButton <span class="token punctuation">:</span>              bool    <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token boolean">false</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`if true rightIcon can be tapped`</span></span>
-
-rightButtonPress <span class="token punctuation">:</span>         func    <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`the tap response if`</span></span> rightButton <span class="token template-string"><span class="token string">`is true`</span></span>
-
-rightIcon <span class="token punctuation">:</span>                string  <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token string">''</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`uses react-native-vector-icons/FontAwesome5 | name of the icon you want to use.`</span></span>
-  <span class="token template-string"><span class="token string">`see (https://fontawesome.com/icons?d=gallery) to see what icon names you can use`</span></span>
-
-rightIconSize <span class="token punctuation">:</span>            number  <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token number">20</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`the size of the right icon`</span></span>
-
-rightIconColor <span class="token punctuation">:</span>           string  <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token constant">COLOR</span><span class="token punctuation">.</span><span class="token constant">BLACK</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`the color of the right icon`</span></span>
-
-rightBorderColor <span class="token punctuation">:</span>         string  <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token string">''</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`if it has a value`</span></span> rightBorderThickness <span class="token template-string"><span class="token string">`will be needed for this to work`</span></span>
-
-rightBorderThickness <span class="token punctuation">:</span>     number  <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token number">0</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`nullified if`</span></span> rightBorderColor <span class="token template-string"><span class="token string">`has no value. (dependent on the`</span></span> rightBorderColor <span class="token template-string"><span class="token string">`prop.`</span></span>
-
-value <span class="token punctuation">:</span>                   string  <span class="token operator">|</span> required <span class="token operator">|</span>  
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`the value of the TextInput`</span></span>
-
-onChangeText <span class="token punctuation">:</span>            func    <span class="token operator">|</span> required <span class="token operator">|</span>  
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`callback when text is changed or you write something`</span></span>
-
-placeholder <span class="token punctuation">:</span>             string  <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token string">''</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`the placeholder of the input`</span></span>
-
-placeholderColor <span class="token punctuation">:</span>        string  <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token constant">COLOR</span><span class="token punctuation">.</span><span class="token constant">GRAY</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`the color of the placeholder defaults to gray`</span></span>
-
-secureText <span class="token punctuation">:</span>              bool    <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token boolean">false</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`if true text value would be hidden. (used mostly for passwords)`</span></span>
-
-center <span class="token punctuation">:</span>                  bool    <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token boolean">false</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`centers the value/placeholder`</span></span>
-
-inputSize <span class="token punctuation">:</span>               number  <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token number">12</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`size of the font of the value/placeholder`</span></span>
-
-fontFamily <span class="token punctuation">:</span>              string  <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token string">'roboto-regular'</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`fontFamily of the value/placeholder`</span></span>
-
-fontColor <span class="token punctuation">:</span>               string  <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token constant">COLOR</span><span class="token punctuation">.</span><span class="token constant">BLACK</span>
-  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`color of the value/placeholder`</span></span>
+text <span class="token punctuation">:</span>                string  <span class="token operator">|</span> optional <span class="token operator">|</span>  <span class="token string">"Authenticating..."</span>
+  <span class="token operator">-</span> <span class="token template-string"><span class="token string">`text below the loader`</span></span>
 
 </code></pre>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/documentation/docs/components/modal-loader/usage"><span class="arrow-prev">← </span><span>Usage</span></a><a class="docs-next button" href="/documentation/docs/rules/file-structuring"><span>File structuring</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#prop-validation">Prop Validation</a><ul class="toc-headings"><li><a href="#prop-proptype-required-default-value">Prop: Proptype | required? | default value</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/documentation/" class="nav-home"><img src="/documentation/img/logo.svg" alt="React-Native documentation" width="66" height="58"/></a><div><h5>Docs</h5><a href="/documentation/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/documentation/docs/en/doc2.html">Guides (or other categories)</a><a href="/documentation/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/documentation/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/documentation/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/documentation/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Halcyon Digital Media</section></footer></div></body></html>
