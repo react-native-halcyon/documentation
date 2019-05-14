@@ -51,6 +51,16 @@
               }
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">File structuring</h1></header><article><div><span><p>Inside the src folder.</p>
+<p>Initially this is the contents of our src folder</p>
+<pre><code class="hljs">.
+├── ⚛ <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">App</span>.</span></span>jsx         <span class="hljs-comment">// the entry point of our project</span>
+├──📁 assets          <span class="hljs-comment">// assets like images and fonts go here</span>
+├──📁 components      <span class="hljs-comment">// global components / reusable components go here</span>
+├──📁 config          <span class="hljs-comment">// router and theme-styles are here</span>
+├──📁 reducers        <span class="hljs-comment">// redux reducer stuff is here</span>
+├──📁 sagas           <span class="hljs-comment">// redux-saga stuff here</span>
+└──📁 screens         <span class="hljs-comment">// all screen files go here</span>
+</code></pre>
 <h2><a class="anchor" aria-hidden="true" id="assets"></a><a href="#assets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>assets</h2>
 <p>all assets should be inside this folder. (fonts,images, etc..)</p>
 <ul>
@@ -58,20 +68,24 @@
 <ul>
 <li>you can organize image files by adding folders inside <code>images</code></li>
 </ul>
-<pre><code class="hljs">. <span class="hljs-selector-tag">assets</span>
-├── <span class="hljs-selector-tag">fonts</span>
-│   ├── <span class="hljs-selector-tag">Roboto-Bold</span><span class="hljs-selector-class">.ttf</span>
-│   ├── <span class="hljs-selector-tag">Roboto-Light</span><span class="hljs-selector-class">.ttf</span>
-│   └── <span class="hljs-selector-tag">Roboto-Regular</span><span class="hljs-selector-class">.ttf</span>
-└── <span class="hljs-selector-tag">images</span>
-    ├── <span class="hljs-selector-tag">app_icons</span>
-    │   ├── 1<span class="hljs-selector-tag">-nologo</span><span class="hljs-selector-class">.gif</span>
-    │   ├── <span class="hljs-selector-tag">left-arrow</span><span class="hljs-selector-class">.png</span>
-    │   └── <span class="hljs-selector-tag">lowly-icon</span><span class="hljs-selector-class">.jpg</span>
-    ├── <span class="hljs-selector-tag">index</span><span class="hljs-selector-class">.js</span>
-    └── <span class="hljs-selector-tag">large_images</span>
-        ├── <span class="hljs-selector-tag">cover_photo</span><span class="hljs-selector-class">.png</span>
-        └── <span class="hljs-selector-tag">profile</span><span class="hljs-selector-class">.gif</span>
+<pre><code class="hljs">.📁 assets
+│
+├──📁 fonts                     <span class="hljs-comment">// all font files go here</span>
+│   │
+│   ├── Roboto-<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Bold</span>.</span></span>ttf
+│   ├── Roboto-<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Light</span>.</span></span>ttf
+│   └── Roboto-<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Regular</span>.</span></span>ttf
+│
+└──📁 images                    <span class="hljs-comment">// images here</span>
+    │
+    ├──📁 app_icons
+    │   ├── <span class="hljs-number">1</span>-nologo.gif
+    │   ├── left-arrow.png
+    │   └── lowly-icon.jpg
+    ├── ⚛ index.js
+    └──📁 large_images
+        ├── cover_photo.png
+        └── profile.gif
 </code></pre></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="components"></a><a href="#components" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>components</h2>
@@ -79,46 +93,57 @@
 <ul>
 <li>Usage
 <ul>
-<li><p>Global component</p>
+<li><p>Global components</p>
 <ul>
 <li>if you are building components that are used onto multiple screens; you can add it here.</li>
 </ul>
 <blockquote>
 <p>Be sure to put them to the proper folders. For example <code>TextInput</code> components should be inside <code>inputs</code> folder.</p>
 </blockquote>
-<pre><code class="hljs">. components
-├── buttons
-│   └── CustomButton<span class="hljs-selector-class">.jsx</span>
-├── icons
-│   ├── BaseIcon<span class="hljs-selector-class">.jsx</span>
-│   └── Chevron<span class="hljs-selector-class">.jsx</span>
-├── index<span class="hljs-selector-class">.jsx</span>
-├── inputs
-│   ├── CustomInput<span class="hljs-selector-class">.jsx</span>
-│   └── Input<span class="hljs-selector-class">.jsx</span>
-├── layouts
-│   ├── CustomHeader<span class="hljs-selector-class">.jsx</span>
-│   ├── CustomImageBackground<span class="hljs-selector-class">.jsx</span>
-│   ├── Head<span class="hljs-selector-class">.jsx</span>
-├── modals
-│   └── ModalLoader<span class="hljs-selector-class">.jsx</span>
-└── texts
-    ├── GlobalText<span class="hljs-selector-class">.jsx</span>
-    └── InfoText<span class="hljs-selector-class">.jsx</span>
-    └── Paragraph<span class="hljs-selector-class">.jsx</span>
+<pre><code class="hljs">.📁 components
+│
+├──📁 buttons
+│   └── ⚛ CustomButton<span class="hljs-selector-class">.jsx</span>
+│
+├──📁 icons
+│   ├── ⚛ BaseIcon<span class="hljs-selector-class">.jsx</span>
+│   └── ⚛ Chevron<span class="hljs-selector-class">.jsx</span>
+│
+├── ⚛ index<span class="hljs-selector-class">.jsx</span>
+│
+├──📁 inputs
+│   ├── ⚛ CustomInput<span class="hljs-selector-class">.jsx</span>
+│   └── ⚛ Input<span class="hljs-selector-class">.jsx</span>
+│
+├──📁 layouts
+│   ├── ⚛ CustomHeader<span class="hljs-selector-class">.jsx</span>
+│   ├── ⚛ CustomImageBackground<span class="hljs-selector-class">.jsx</span>
+│   └── ⚛ Head<span class="hljs-selector-class">.jsx</span>
+│
+├──📁 modals
+│   └── ⚛ ModalLoader<span class="hljs-selector-class">.jsx</span>
+│
+└──📁 texts
+    ├── ⚛ GlobalText<span class="hljs-selector-class">.jsx</span>
+    ├── ⚛ InfoText<span class="hljs-selector-class">.jsx</span>
+    └── ⚛ Paragraph<span class="hljs-selector-class">.jsx</span>
 </code></pre></li>
 <li><p>Single use components</p>
 <ul>
 <li>if you made a component that can only be used by a certain screen; you can add a folder on that screen folder and name it <code>components</code>. It will be easy for collaborators to find that file and modify them.</li>
 </ul>
-<pre><code class="hljs">. HomeTabScreens
-├── components <span class="hljs-comment">// this folder</span>
-│   └── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">ItemList</span>.</span></span>jsx
-├── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Info</span>.</span></span>jsx
-└── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">About</span>.</span></span>jsx
+<pre><code class="hljs">.
+.📁 HomeTabScreen               <span class="hljs-comment">// you can add functions folder here too</span>
+│
+├──📁 components                 <span class="hljs-comment">// this folder</span>
+│   │
+│   └──  ⚛ <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">CategoryList</span>.</span></span>jsx      <span class="hljs-comment">// the component that you want to use on Home.jsx</span>
+│
+├── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Home</span>.</span></span>jsx
+└── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">ProfileSettings</span>.</span></span>jsx
 </code></pre>
-<p>then on your screen you can just import them like this</p>
-<pre><code class="hljs css language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> ItemList <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./components/ItemList"</span><span class="token punctuation">;</span>
+<p>then on your Home screen you can just import them like this</p>
+<pre><code class="hljs css language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> CategoryList <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./HomeTabScreen/components/CategoryList"</span><span class="token punctuation">;</span>
 </code></pre></li>
 </ul></li>
 </ul>
@@ -131,11 +156,11 @@
 <blockquote>
 <p>add them to the themes folder</p>
 </blockquote>
-<pre><code class="hljs">. constants
-├── action-types
+<pre><code class="hljs">.📁 constants
+├──📁 action-types
 │   └── Authenticate<span class="hljs-selector-class">.js</span>
 ├── Sessions<span class="hljs-selector-class">.js</span>
-└── themes
+└──📁 themes
     ├── Colors<span class="hljs-selector-class">.js</span>
     ├── Dimensions<span class="hljs-selector-class">.js</span>
     ├── Fonts<span class="hljs-selector-class">.js</span>
@@ -163,7 +188,7 @@
 <ul>
 <li>we mostly use redux for authentication</li>
 </ul>
-<pre><code class="hljs">. reducers
+<pre><code class="hljs">.📁 reducers
 ├── Authenticate<span class="hljs-selector-class">.js</span>
 └── index<span class="hljs-selector-class">.js</span>
 
@@ -173,23 +198,23 @@
 <p>we can modify our saga effects on <code>Authenticate.js</code></p>
 <ul>
 <li><p>Usage</p>
-<pre><code class="hljs">. sagas
+<pre><code class="hljs">.📁 sagas
 ├── Authenticate<span class="hljs-selector-class">.js</span>
 └── index<span class="hljs-selector-class">.js</span>
 </code></pre></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="screens"></a><a href="#screens" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>screens</h2>
 <p>this is the default structure</p>
-<pre><code class="hljs">. screens
-├── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Login</span>.</span></span>jsx
-├── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Splash</span>.</span></span>jsx
-├── tabs <span class="hljs-comment">// folder</span>
-│   ├── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Home</span>.</span></span>jsx
-│   └── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">ProfileSettings</span>.</span></span>jsx
-└── tabScreens <span class="hljs-comment">// folder</span>
-    ├── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">About</span>.</span></span>jsx
-    ├── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Info</span>.</span></span>jsx
-    └── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">License</span>.</span></span>jsx
+<pre><code class="hljs">.📁 screens
+├──  ⚛ <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Login</span>.</span></span>jsx
+├──  ⚛ <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Splash</span>.</span></span>jsx
+├──📁 tabs <span class="hljs-comment">// folder</span>
+│   ├──  ⚛ <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Home</span>.</span></span>jsx
+│   └──  ⚛ <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">ProfileSettings</span>.</span></span>jsx
+└──📁 tabScreens <span class="hljs-comment">// folder</span>
+    ├──  ⚛ <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">About</span>.</span></span>jsx
+    ├──  ⚛ <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Info</span>.</span></span>jsx
+    └──  ⚛ <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">License</span>.</span></span>jsx
 </code></pre>
 <blockquote>
 <p>you can add more folders here if you want but be sure to name it properly.</p>
@@ -198,14 +223,14 @@
 <ul>
 <li>Usage</li>
 </ul>
-<pre><code class="hljs css language-diff">. screens
-├── Login.jsx
-├── Splash.jsx
-├── tabs
-│   ├── Home.jsx
-│   └── ProfileSettings.jsx
-<span class="hljs-addition">++─ HomeTabScreens // folder</span>
-    ├── About.jsx
-    ├── Info.jsx
+<pre><code class="hljs css language-diff">.📁 screens
+├──  ⚛ Login.jsx
+├──  ⚛ Splash.jsx
+├──📁 tabs
+│   ├──  ⚛ Home.jsx
+│   └──  ⚛ ProfileSettings.jsx
+<span class="hljs-addition">+──📁 HomeTabScreens // folder</span>
+    ├──  ⚛ About.jsx
+    ├──  ⚛ Info.jsx
 </code></pre>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/documentation/docs/components/modal-loader/proptypes"><span class="arrow-prev">← </span><span>Proptypes</span></a><a class="docs-next button" href="/documentation/docs/rules/code-structuring"><span>Code structuring</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#assets">assets</a></li><li><a href="#components">components</a></li><li><a href="#config">config</a></li><li><a href="#reducers">reducers</a></li><li><a href="#sagas">sagas</a></li><li><a href="#screens">screens</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/documentation/" class="nav-home"><img src="/documentation/img/logo.svg" alt="React-Native documentation" width="66" height="58"/></a><div><h5>Docs</h5><a href="/documentation/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/documentation/docs/en/doc2.html">Guides (or other categories)</a><a href="/documentation/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/documentation/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/documentation/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/documentation/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Halcyon Digital Media</section></footer></div></body></html>
