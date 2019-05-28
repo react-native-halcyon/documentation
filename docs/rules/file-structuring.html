@@ -132,15 +132,16 @@
 <ul>
 <li>if you made a component that can only be used by a certain screen; you can add a folder on that screen folder and name it <code>components</code>. It will be easy for collaborators to find that file and modify them.</li>
 </ul>
-<pre><code class="hljs">.
-.📁 HomeTabScreen               <span class="hljs-comment">// you can add functions folder here too</span>
-│
-├──📁 components                 <span class="hljs-comment">// this folder</span>
-│   │
-│   └──  ⚛ <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">CategoryList</span>.</span></span>jsx      <span class="hljs-comment">// the component that you want to use on Home.jsx</span>
-│
-├── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Home</span>.</span></span>jsx
-└── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">ProfileSettings</span>.</span></span>jsx
+<pre><code class="hljs"><span class="hljs-comment">// Tab</span>
+.📁 Home    <span class="hljs-comment">// you can add functions folder here too</span>
+├── ⚛ About<span class="hljs-selector-class">.jsx</span>
+├──📁 components      <span class="hljs-comment">// this folder</span>
+│   ├── ⚛ HomeSocialLinks<span class="hljs-selector-class">.jsx</span>   <span class="hljs-comment">// the component that you want to use on Home.jsx</span>
+│   ├── ⚛ HomeTitle<span class="hljs-selector-class">.jsx</span>
+│   └── index<span class="hljs-selector-class">.js</span>
+├── ⚛ Home<span class="hljs-selector-class">.jsx</span>
+├── ⚛ Info<span class="hljs-selector-class">.jsx</span>
+└── ⚛ License<span class="hljs-selector-class">.jsx</span>
 </code></pre>
 <p>then on your Home screen you can just import them like this</p>
 <pre><code class="hljs css language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> CategoryList <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./HomeTabScreen/components/CategoryList"</span><span class="token punctuation">;</span>
@@ -206,31 +207,62 @@
 <h2><a class="anchor" aria-hidden="true" id="screens"></a><a href="#screens" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>screens</h2>
 <p>this is the default structure</p>
 <pre><code class="hljs">.📁 screens
-├──  ⚛ <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Login</span>.</span></span>jsx
-├──  ⚛ <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Splash</span>.</span></span>jsx
-├──📁 tabs <span class="hljs-comment">// folder</span>
-│   ├──  ⚛ <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Home</span>.</span></span>jsx
-│   └──  ⚛ <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">ProfileSettings</span>.</span></span>jsx
-└──📁 tabScreens <span class="hljs-comment">// folder</span>
-    ├──  ⚛ <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">About</span>.</span></span>jsx
-    ├──  ⚛ <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Info</span>.</span></span>jsx
-    └──  ⚛ <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">License</span>.</span></span>jsx
+├──📁 auth
+│   ├── ⚛ Login<span class="hljs-selector-class">.jsx</span>
+│   └── ⚛ Signup<span class="hljs-selector-class">.jsx</span>
+├── Splash<span class="hljs-selector-class">.jsx</span>
+└──📁 tabs
+    ├──📁 Home
+    │   ├── ⚛ About<span class="hljs-selector-class">.jsx</span> <span class="hljs-comment">// Stack</span>
+    │   ├──📁 components
+    │   │   ├── ⚛ HomeSocialLinks<span class="hljs-selector-class">.jsx</span> <span class="hljs-comment">// Home Tab component</span>
+    │   │   ├── ⚛ HomeTitle<span class="hljs-selector-class">.jsx</span> <span class="hljs-comment">// Home Tab component</span>
+    │   │   └── index<span class="hljs-selector-class">.js</span>
+    │   ├── ⚛ Home<span class="hljs-selector-class">.jsx</span>  <span class="hljs-comment">// Main screen</span>
+    │   ├── ⚛ Info<span class="hljs-selector-class">.jsx</span>  <span class="hljs-comment">// Stack</span>
+    │   └── ⚛ License<span class="hljs-selector-class">.jsx</span> <span class="hljs-comment">// Stack</span>
+    └──📁 Profile
+        ├── ⚛ CommunityPosts<span class="hljs-selector-class">.jsx</span>
+        ├──📁 components
+        │   ├── index<span class="hljs-selector-class">.js</span>
+        │   ├── ⚛ ProfileHeader<span class="hljs-selector-class">.jsx</span>
+        │   ├── ⚛ ProfileSettings<span class="hljs-selector-class">.jsx</span>
+        │   └── ⚛ ProfileSocialTab<span class="hljs-selector-class">.jsx</span>
+        └── ⚛ Profile<span class="hljs-selector-class">.jsx</span>
 </code></pre>
 <blockquote>
-<p>you can add more folders here if you want but be sure to name it properly.</p>
-<p>for instance you have multiple screens for Home tab. You can add a folder named HomeTabScreens</p>
+<p>you can add more folders in <code>tabs</code> if you want; but be sure to name it properly and it is a <code>tab</code>.</p>
 </blockquote>
 <ul>
 <li>Usage</li>
 </ul>
 <pre><code class="hljs css language-diff">.📁 screens
-├──  ⚛ Login.jsx
-├──  ⚛ Splash.jsx
-├──📁 tabs
-│   ├──  ⚛ Home.jsx
-│   └──  ⚛ ProfileSettings.jsx
-<span class="hljs-addition">+──📁 HomeTabScreens // folder</span>
-    ├──  ⚛ About.jsx
-    ├──  ⚛ Info.jsx
+├──📁 auth
+│   ├── ⚛ Login.jsx
+│   └── ⚛ Signup.jsx
+├── Splash.jsx
+└──📁 tabs
+    ├──📁 Home
+    │   ├── ⚛ About.jsx
+    │   ├── components
+    │   │   ├── ⚛ HomeSocialLinks.jsx
+    │   │   ├── ⚛ HomeTitle.jsx
+    │   │   └── index.js
+    │   ├── ⚛ Home.jsx
+    │   ├── ⚛ Info.jsx
+    │   └── ⚛ License.jsx
+    ├──📁 Profile
+    |   ├── ⚛ CommunityPosts.jsx
+    |   ├── components
+    |   │   ├── index.js
+    |   │   ├── ⚛ ProfileHeader.jsx
+    |   │   ├── ⚛ ProfileSettings.jsx
+    |   │   └── ⚛ ProfileSocialTab.jsx
+    |   └── ⚛ Profile.jsx
+<span class="hljs-addition">+   └──📁 Notifications</span>
+<span class="hljs-addition">+       ├── components</span>
+<span class="hljs-addition">+       │   ├── ⚛ NotificationList.jsx</span>
+<span class="hljs-addition">+       │   └── index.js</span>
+<span class="hljs-addition">+       └── ⚛ Notifications.jsx</span>
 </code></pre>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/documentation/docs/components/image-background"><span class="arrow-prev">← </span><span class="function-name-prevnext">&lt;ImageBackground /&gt;</span></a><a class="docs-next button" href="/documentation/docs/rules/code-structuring"><span>Code structuring</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#assets">assets</a></li><li><a href="#components">components</a></li><li><a href="#config">config</a></li><li><a href="#reducers">reducers</a></li><li><a href="#sagas">sagas</a></li><li><a href="#screens">screens</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/documentation/" class="nav-home"><img src="/documentation/img/logo.svg" alt="React-Native documentation" width="66" height="58"/></a><div><h5>Docs</h5><a href="/documentation/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/documentation/docs/en/doc2.html">Guides (or other categories)</a><a href="/documentation/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/documentation/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/documentation/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/documentation/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Halcyon Digital Media</section></footer></div></body></html>
